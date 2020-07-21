@@ -1,1 +1,1 @@
-web: gunicorn quantumProject.settings.wsgi
+web: gunicorn quantumProject.wsgi

@@ -25,7 +25,7 @@ SECRET_KEY = 'stpemuk5mw$dv&m*&-5bh&)s#^&9t%jtql9*9h%(n2a#p*_4t2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://myjeevanapp.herokuapp.com/"]
+ALLOWED_HOSTS = []
 
 
 # Application definition

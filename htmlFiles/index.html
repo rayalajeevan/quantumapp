@@ -1,0 +1,496 @@
+
+<html>
+{% load static %}
+<head>
+    <title>
+        Skill Set 
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<style>
+.question{
+    padding-top:25px;
+}
+.bg-dark {
+    background-color: #1ab394!important;
+    border-radius: 25px;
+}
+.navigationContainer {
+    width: 100%;
+    height: 110px;
+    max-width: 1100px;
+    margin: 10px auto -70px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.navigationProgressbarImage {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 26px;
+}
+
+.navigationProgressbarImage.hidden {
+    visibility: hidden;
+}
+
+.navigationProgressbarDiv {
+    max-width: calc(100% - 32px);
+    display: inline-block;
+    overflow: hidden;
+}
+
+.navigationProgressbar {
+    padding-left: 28px;
+    padding-right: 28px;
+    display: inline-block;
+    width: max-content;
+}
+
+.navigationProgressbar li {
+    width: 138px;
+    font-size: 14px;
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+}
+
+.navigationProgressbar .pageTitle {
+    font-weight: bold;
+    color: black;
+}
+
+.navigationProgressbar .pageDescription {
+    color: black;
+}
+.navigationProgressbar li:before {
+    width: 24px;
+    height: 24px;
+    content: '';
+    line-height: 30px;
+    border: 3px solid #8dd9ca;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background-color: #8dd9ca;
+}
+.navigationProgressbar li:after {
+    width: 73%;
+    height: 3px;
+    content: '';
+    position: absolute;
+    background-color: #d4d4d4;
+    top: 15px;
+    left: -36.5%;
+}
+.navigationProgressbar li:first-child:after {
+    content: none;
+}
+.navigationProgressbar li.completed:before {
+    border-color: #1ab394;
+    background-color: #1ab394;
+}
+.navigationProgressbar li.completed + li:after {
+    background-color: #8dd9ca;
+}
+.navigationProgressbar li.current:before {
+    border-color: #1ab394;
+    background-color: white;
+}
+img{
+    height:400;
+}
+</style>
+<body>
+
+<div class="container" style="padding-top:25px">
+<div class="row-2">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" >
+  <a class="navbar-brand" href="#"><h3 ><font color="white">Skill Survey</font></h3></a>
+  </nav>
+<div class="navigationProgressbarDiv" style="padding-top:25px">
+<ul class="navigationProgressbar"><li class="current"><span class="pageTitle">Personal</span><br><span class="pageDescription">Persoanl info</span></li>
+<li ><span class="pageTitle">Education</span><br><span class="pageDescription">Education Details</span></li><li>
+<span class="pageTitle">Skills</span><br><span class="pageDescription">Skills Details</span></li><li>
+<span class="pageTitle">Aspiring</span><br><span class="pageDescription">Aspiring Details</span></li><li>
+<span class="pageTitle">Account</span><br><span class="pageDescription">Create Account</span></li></ul></div>
+</div>
+                    <div class="question" id="question-1" >
+                    <form>
+                                        <div class="card mb-3 ">
+                                            <img src="https://i.pinimg.com/originals/61/f3/46/61f346045132db493cbfc22c9b9b92b1.jpg" class="" >
+                                            <div class="card-body">
+                                                <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">First Name</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="first_name">
+                                
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Last Name</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="last_name">
+                                
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+                                </div>
+                                <input type="email" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="email">
+                                
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Date Of Birth</span>
+                                </div>
+                                <input type="date" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id ="dob">
+                                
+                                </div>
+                                
+      <div class="alert alert-danger" style="display:none" id="validation-1">
+  
+</div>
+                                                <p class="card-text"><small class="text-muted"><input type="submit" class="btn btn-primary m-2" onclick="return page1()" value="Next"></small></p>
+                                            </div>
+                                        </div>
+                                        </form>
+                    </div>
+                    
+                    <div class="question" id="question-2" style="display:none">
+                                <div class="card mb-3 ">
+                                    <img src="https://i.insider.com/5d24ab4d21a86114000e6df5?width=1100&format=jpeg&auto=webp" class="" >
+                                    <div class="card-body">
+                                        <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Highest Education</span>
+                        </div>
+                        <input type="text" id="h-educ" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="BE/BTECH/etc">
+                        </div>
+                        <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Company Name</span>
+                        </div>
+                        <input type="text" id="cname" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" >
+                        </div>
+                        <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Designation</span>
+                        </div>
+                        <input type="text" class="form-control" id="desg" aria-label="Small" aria-describedby="inputGroup-sizing-sm" >
+                        </div>
+       <div class="alert alert-danger" style="display:none" id="validation-2">
+  
+</div>
+
+                                        <p class="card-text"><small class="text-muted"><button class="btn btn-primary m-2" onclick="page2()">Next</button></small></p>
+                                    </div>
+                                </div>
+                    </div>
+                    <div class="question" id="question-3" style="display:none">
+                                <div class="card mb-3 ">
+                                    <img src="https://d3kqdc25i4tl0t.cloudfront.net/articles/content/590_165792_skills.hero.jpg" class="" >
+                                    <div class="card-body">
+                                        <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm"> Current Skills</span>
+                        </div>
+                        <input type="text" id="cskills" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="java,python">
+                        </div>
+                        <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Aspiring Skills</span>
+                        </div>
+                        <input type="text" id="askills" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="django,Machine Learning">
+                        </div>
+        <div class="alert alert-danger" style="display:none" id="validation-3">
+  
+</div>
+
+                                        <p class="card-text"><small class="text-muted"><button class="btn btn-primary m-2" onclick="page3()">Next</button></small></p>
+                                    </div>
+                                </div>
+                    </div>
+                    <div class="question" id="question-4" style="display:none">
+                                <div class="card mb-3 ">
+                                    <img src="data:image/jpeg;base64,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" class="" >
+                                    <div class="card-body">
+                                        <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Aspiring Role</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="role">
+                        </div>
+                        <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Dream Company</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="dcmp" >
+                        </div>
+                       
+ <div class="alert alert-danger" style="display:none" id="validation-4">
+  
+</div>
+                                        <p class="card-text"><small class="text-muted"><button class="btn btn-primary m-2" onclick="page4()">Next</button></small></p>
+                                    </div>
+                                </div>
+                    </div>
+                    <div class="question" id="question-5" style="display:none;" >
+                                <div class="card mb-3 ">
+                                    <img src="https://s3.amazonaws.com/fjwp/blog/wp-content/uploads/2019/10/09103114/Career-Change-30-1.png" class="" >
+                                    <div class="card-body">
+                                    <p>Can we help you with career trajectories</p>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                <input type="radio" aria-label="Radio button for following text input" id="tra" name="tra" value="Yes" checked>
+                                                </div>
+                                            </div>
+                                            <label style="padding-left:5px">yes</label>
+                                            </div>
+                                            <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                <input type="radio" aria-label="Radio button for following text input" id="tra" name="tra" value="No">
+                                                </div>
+                                            </div>
+                                            <label style="padding-left:5px">No</label>
+                                            </div>
+                                            
+                                            <p style="padding-top:10px"> Would you like to create an Account with us? </p>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                <input type="radio" aria-label="Radio button for following text input" id="act" name="act" value="Yes" checked onclick="displayPassword()">
+                                                </div>
+                                            </div>
+                                            <label style="padding-left:5px">yes</label>
+                                            </div>
+                                            <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                <input type="radio" aria-label="Radio button for following text input" id="act" name="act" value="No" onclick="displayPassword()">
+                                                </div>
+                                            </div>
+                                            <label style="padding-left:5px">No</label>
+                                            </div>
+                                            <div id="password" >
+                                            <div class="input-group input-group-sm mb-3" style="padding-top:5px">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Password</span>
+                                </div>
+                                <input type="password" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="pwd">
+                                
+                                </div>
+                                </div>
+                                                                
+ <div class="alert alert-danger" style="display:none" id="validation-5">
+  
+</div>
+                                        <p class="card-text"><small class="text-muted"><button class="btn btn-primary m-2" onclick="page5()">Submit</button></small></p>
+                                    </div>
+                                </div>
+                    </div>
+                    <div class="alert alert-success" id="success" style="display:none;">
+  <strong>Success!</strong> Your Survey Succesfully Posted
+</div>
+
+
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script>
+var survey_data={}
+function page1(){
+    let question1=document.getElementById('question-1')
+    let question2=document.getElementById('question-2')
+    let validate=document.getElementById('validation-1');
+    let first_name=document.getElementById('first_name').value;
+    let last_name=document.getElementById('last_name').value;
+    let email=document.getElementById('email').value;
+    let dob=document.getElementById('dob').value;
+    let progress=document.getElementsByTagName('li')
+    if (first_name.length<5){
+        validate.innerHTML="<strong>first name</strong> must be greater than 5 charcters !";
+        validate.style="display:block";
+        return false;
+    }
+    if (last_name.length<5){
+        validate.innerHTML="<strong>Last name</strong> must be greater than 5 charcters !";
+        validate.style="display:block";
+        return false;
+    }
+    if (first_name.trim()==last_name.trim()){
+        validate.innerHTML="<strong>first name</strong> and <strong>last name</strong>must be different!";
+        validate.style="display:block";
+        return false;
+        
+    }
+    if (dob.length==0){
+        validate.innerHTML="<strong>Date OF Birth</strong> Not Selected !";
+        validate.style="display:block";
+        return false;
+    }
+    validate.style="display:none";
+    survey_data["first_name"]=first_name
+    survey_data["last_name"]=last_name
+    survey_data["email"]=email
+    survey_data["date_of_birth"]=dob
+    question1.style="display:none";
+    question2.style="display:block";
+    progress[0].setAttribute('class',"completed")
+    progress[1].setAttribute('class',"current")
+    return false;
+}
+function page2(){
+    let question2=document.getElementById('question-2')
+    let question3=document.getElementById('question-3')
+    let validate=document.getElementById('validation-2');
+    let h_educ=document.getElementById('h-educ').value;
+    let cname=document.getElementById('cname').value;
+    let desg=document.getElementById('desg').value;
+    let progress=document.getElementsByTagName('li')
+    if (h_educ.length<2){
+        validate.innerHTML="<strong>Highest Education</strong> atleast 2 charcters !";
+        validate.style="display:block";
+        return false;
+    }
+    if (cname.length<3){
+        validate.innerHTML="<strong>Company Name</strong> atleast 3 charcters !";
+        validate.style="display:block";
+        return false;
+    }
+    if (desg.length<3){
+        validate.innerHTML="<strong>Desgination</strong> atleast 3 charcters !";
+        validate.style="display:block";
+        return false;
+    }
+    survey_data["highest_education"]=h_educ
+    survey_data["company_name"]=cname
+    survey_data["designation"]=desg
+    question2.style="display:none";
+    question3.style="display:block";
+    progress[1].setAttribute('class',"completed")
+    progress[2].setAttribute('class',"current")
+    validate.style="display:none";
+    return false;
+
+}
+function page3(){
+     let question3=document.getElementById('question-3')
+    let question4=document.getElementById('question-4')
+    let validate=document.getElementById('validation-3');
+    let askills=document.getElementById("askills").value;
+    let cskills=document.getElementById('cskills').value;
+    let progress=document.getElementsByTagName('li')
+    if (askills.length==0 || cskills.length==0 ){;
+        validate.innerHTML="<strong>Atleast 1 Skill  both  Current Skills and Aspiring Skill</strong> !";
+        validate.style="display:block";
+        return false;
+    }
+    survey_data["current_skills"]=cskills
+    survey_data["aspiring_skills"]=askills
+    question3.style="display:none";
+    question4.style="display:block";
+    progress[2].setAttribute('class',"completed")
+    progress[3].setAttribute('class',"current")
+    validate.style="display:none";
+}
+function page4(){
+    let question4=document.getElementById('question-4')
+    let question5=document.getElementById('question-5')
+    let validate=document.getElementById('validation-4');
+    let role=document.getElementById("role").value;
+    let cmp=document.getElementById('dcmp').value;
+    let progress=document.getElementsByTagName('li')
+    if (role.length<5){
+        validate.innerHTML="<strong>Role atleast 5 chars</strong> !"
+        validate.style="display:block";
+        return false;
+    }
+    if (cmp.length<5){
+        validate.innerHTML="<strong>Company Name atleast 5 chars</strong> !"
+        validate.style="display:block";
+        return false;
+    }
+    survey_data["aspiring_role"]=role
+    survey_data["dream_company"]=cmp
+    question4.style="display:none";
+    question5.style="display:block";
+    progress[3].setAttribute('class',"completed")
+    progress[4].setAttribute('class',"current")
+    validate.style="display:none";
+    return false;
+}
+function page5(){
+    survey_data["careers_trajectories"]="NO";
+    survey_data["create_an_account"]="NO";
+    survey_data["password"]=null;
+    let question5=document.getElementById('question-5')
+    let validate=document.getElementById('validation-5');
+    let trajectories=document.getElementById("tra");
+    let account=document.getElementById('act');
+    let progress=document.getElementsByTagName('li')
+    if (trajectories.checked){
+       survey_data["careers_trajectories"]="YES" 
+    }
+    if (account.checked){
+        survey_data["create_an_account"]="YES"
+        let pwd=document.getElementById("pwd").value
+        if(pwd.length<8){
+            validate.innerHTML="<strong>Password ateast 8 charcters</strong> !";
+            validate.style="display:block";
+        return false;
+        }
+        survey_data["password"]=pwd;
+        validate.style="display:none";
+    }
+    postSurvey()
+    
+}
+function displayPassword(){
+let account=document.getElementById('act');
+let pwd=document.getElementById("password")
+    if (account.checked){
+        pwd.style="display:block";
+        return false;
+    }
+    else{
+pwd.style="display:none";
+        return false;
+    }
+}
+function postSurvey(){
+    var xhttp = new XMLHttpRequest();
+    let question5=document.getElementById('question-5')
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        let progress=document.getElementsByTagName('li')
+        let success=document.getElementById("success")
+        success.style="display:block";
+        progress[4].setAttribute('class',"completed")
+        question5.style="display:none;";
+        return false;
+        
+    }
+    else if(this.readyState == 4 && this.status == 400){
+        console.log(this.responseText)
+        console.log(survey_data)
+        return false;
+    }
+    else if(this.readyState == 4 && this.status == 500){
+       console.log(500) 
+       return false;
+    }
+  }
+  xhttp.open("POST", "http://localhost:8000/postsurvey/");
+  xhttp.send(JSON.stringify(survey_data));
+  return false;
+}
+</script>
+</html>

@@ -488,7 +488,7 @@ function postSurvey(){
        return false;
     }
   }
-  xhttp.open("POST", "http://localhost:8000/postsurvey/");
+  xhttp.open("POST", "https://myjeevanapp.herokuapp.com/postsurvey/");
   xhttp.send(JSON.stringify(survey_data));
   return false;
 }

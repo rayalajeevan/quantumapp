@@ -21,5 +21,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('postsurvey/', PostSurvey.as_view()),
-    path('skillsurvey/', render_home_page)
+    path('', render_home_page)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
